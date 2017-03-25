@@ -1,0 +1,122 @@
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+<h3>Choose yours sholarship</h3>
+</br></br>
+<div ng-app="myApp"   ng-controller="View2Ctrl as data"  >
+    <div>         
+        <form name="myForm" ng-submit="submitForm()"> 
+            <div ng-hide="shows" >
+                <div class="form-group">    
+                    <label for="level"> Select level of study: </label><br>
+                    <select name="level" ng-model="data.level">
+                        <option value="All">All</option>
+                        <option value="Bachelor">Bachelor</option>
+                        <option value="Masters">Master</option>
+                        <option value="PhD Degree">PhD Degree</option>
+                        <option value="Intership">Intership</option>
+                        <option value="Non Degree">Non Degree</option>
+                    </select></br></br></br>
+                    <tt>{{data.level}}</tt><br/>
+                </div>
+                <div class="form-group">
+                    <label for="field"> Select field of study: </label><br>
+                    <select name="field" ng-model="data.field">
+                        <option value="All">All</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Economics and Finance">Economics and Finance</option>
+                        <option value="Business and Management">Business and Management</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Social Sciences">Social Sciences</option>
+                        <option value="Physical and Life Sciences">Physical and Life Sciences</option>
+                        <option value="Arts">Arts</option>
+                        <option value="Humanities">Humanities</option>
+                        <option value="Agriculture">Agriculture</option>
+                    </select></br></br></br>
+                    <tt>{{data.field}}</tt><br/>
+                </div>
+                <div class="form-group">
+                    <label for="country"> Select country of study: </label><br>
+                    <select name="country" ng-model="data.country">
+                        <option value="All">All</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Bulgaria">Bulgaria</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Czech Republic">Czech Republic</option>
+                        <option value="Denmark">Denmark</option>
+                        <option value="Finland">Finland</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                        <option value="France">France</option>
+                        <option value="Greece">Greece</option>
+                        <option value="France">France</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Luxembourg">Luxembourg</option>
+                        <option value="New Zealand">New Zealand</option>
+                        <option value="Norway">Norway</option>
+                        <option value="Poland">Poland</option>
+                        <option value="Slovakia">Slovakia</option>
+                        <option value="Slovenia">Slovenia</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Sweden">Sweden</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="Other">Other</option>
+                    </select></br></br></br>
+                    <tt>{{data.country}}</tt><br/>
+                </div>
+                <div class="form-group">
+                    <label for="language"> Select language of  study: </label><br>
+                    <select name="language" ng-model="data.language">
+                        <option value="All">All</option>
+                        <option value="English">English</option>
+                        <option value="German">German</option>
+                        <option value="French">French</option>
+                    </select></br></br></br>
+                    <tt>{{data.language}}</tt><br/>
+                </div>
+                <button ng-click=" shows = true" type="submit" >Go!</button>
+            </div>
+        </form>
+    </div>
+    <div ng-show="shows" >
+        <div align="center" div ng-app="myApp" ng-controller="View2Ctrl"> 
+            <div class="container"> 
+                <div >
+                    <table class="table-condensed">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>level</th>
+                                <th>field</th>
+                                <th>country</th>
+                                <th>language</th>
+                                <th>university</th>
+                                <th>link</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="onescholarship in allscholarship">
+                                <td>{{ onescholarship.id}}</td>
+                                <td>{{ onescholarship.level}}</td>
+                                <td>{{ onescholarship.field}}</td>
+                                <td>{{ onescholarship.country}}</td>
+                                <td>{{ onescholarship.language}}</td>
+                                <td>{{ onescholarship.university}}</td>
+                                <td>{{ onescholarship.link}}</td>
+                            </tr>
+                        </tbody>
+                    </table> 
+                </div>
+            </div> 
+        </div>
+        <button ng-click="shows = false">New search</button>  
+    </div>
+</div>
+
+
+
